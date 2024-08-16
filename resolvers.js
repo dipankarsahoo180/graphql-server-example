@@ -56,4 +56,16 @@ export const resolvers = {
         },
         Contacts: () => Contacts
     },
+
+    Mutation: {
+        CreateContact:(parent,args,context,info)=>{
+            const Id = parseInt(Contacts.length)+100
+            Contacts.push({
+                AccountId:args.AccountId,
+                Name: args.Name,
+                Id: Id
+            })
+            return Contacts.find(con=>con.Id ===Id)
+        }
+    }
   };

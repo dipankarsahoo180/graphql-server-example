@@ -20,4 +20,8 @@ export const typeDefs = `
         Accounts(Name:String):[Account]
     }
 
+    type Mutation{
+        CreateContact(AccountId:ID!,Name:String): Contact
+    }
+
 `;
